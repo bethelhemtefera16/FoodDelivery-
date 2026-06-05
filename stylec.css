@@ -1,0 +1,705 @@
+/* Transparent header for home page */
+body.index-page header {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Hero section with online burger image */
+body.index-page .hero {
+    background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    height: 130vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-top: 0;
+}
+
+/* Optional overlay for text readability */
+body.index-page .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+body.index-page .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: white;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+   
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav a:hover, nav a.active {
+    opacity: 0.9;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: white;
+}
+
+.cart-count {
+    background: #fff;
+    color: #ff5733;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #800020;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+	font-size:18px;
+}
+
+.btn:hover {
+    background-color: #e04e2b;
+    transform: translateY(-3px);
+}
+
+.btn.secondary {
+    background: #666;
+}
+
+.btn.secondary:hover {
+    background: #444;
+}
+
+/* Hero */
+.hero {
+    background: url('images/burger-background.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 0; /* remove previous header spacing */
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); /* slight dark overlay for readability */
+}
+
+.hero-content {
+    position: relative; /* keep text above overlay */
+    z-index: 1;
+	font-size:25px;
+}
+
+/* Sections */
+.categories, .offers, .menu-section, .cart-section,
+.checkout-section, .payment-section, .orders-section,
+.profile-section, .login-section {
+    padding: 100px 0 80px;
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    padding: 1rem;
+    background:#800020;
+    color: white;
+}
+
+/* Tables */
+.menu-table, .offer-table, .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.menu-section , .cart-section{
+    padding: 120px 20px;
+    background: black;
+    color: white;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.menu-card {
+    background: #111;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.menu-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu-card h3 {
+    margin: 10px 0 5px;
+}
+
+.add-btn {
+    margin-top: 10px;
+    padding: 8px 18px;
+    background: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.menu-table th, .offer-table th, .cart-table th {
+    background-color: #800020;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.menu-table td, .offer-table td, .cart-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.add-btn, .remove-btn {
+    background-color:#800020;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: #e74c3c;
+    width: 35px;
+    height: 35px;
+    font-size: 1.4rem;
+    border-radius: 50%;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Checkout & Payment */
+.checkout-grid, .payment-grid, .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.checkout-grid input, .checkout-grid select, .checkout-grid textarea,
+.payment-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.half {
+    flex: 1;
+}
+
+/* Orders */
+.order-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.delivered { background: #d4edda; color: #155724; }
+.preparing { background: #fff3cd; color: #856404; }
+
+/* Profile & Login */
+.login-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box, .profile-info, .saved-addresses, .address-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ddd;
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 3rem; }
+    header .container { flex-direction: column; gap: 1rem; }
+    nav ul { flex-wrap: wrap; justify-content: center; }
+    .checkout-grid, .payment-grid, .profile-grid { grid-template-columns: 1fr; }
+}
+/* ===== HAMBURGER HEADER ===== */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: none;
+    z-index: 9999;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    color: white;
+}
+
+#hamburger {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ===== MENU ===== */
+#hamburgerMenu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    height: 100vh;
+    padding: 20px;
+}
+
+#hamburgerMenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+#hamburgerMenu.show {
+    display: flex;
+}
+/* ===== HEADER ===== */
+.ue-header {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    background: none;
+    color: white;
+    z-index: 10000;
+}
+
+.ue-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+#hamburger {
+    font-size: 33px;
+    cursor: pointer;
+}
+
+
+/* ===== SIDE MENU (Uber Eats style) ===== */
+#sideMenu {
+    position: fixed;
+    top: 0;
+    left: -360px;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    padding: 20px 10px;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+    z-index: 20000;
+}
+
+#sideMenu a {
+    display: block;
+    padding: 15px 0;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    
+}
+
+#sideMenu.show {
+    left: 0;
+}
+
+/* ===== OVERLAY ===== */
+#menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 15000;
+	
+}
+
+#menuOverlay.show {
+    display: block;
+}
+/* ===== LOGIN BUTTON ===== */
+.login-btn {
+    background: white;
+    color: black;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ===== SIDE MENU IMPROVED ===== */
+#sideMenu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+#sideMenu a:hover {
+    background: #f5f5f5;
+    padding-left: 10px;
+}
+
+/* Active page */
+#sideMenu a.active {
+    font-weight: bold;
+    color: #ff5733;
+}
+
+/* Profile section */
+.menu-profile {
+    margin-bottom: 20px;
+}
+
+#darkToggle {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark #sideMenu {
+    background: #1c1c1c;
+}
+
+body.dark #sideMenu a {
+    color: #eee;
+}
+
+body.dark #sideMenu a:hover {
+    background: #333;
+}
+/* Hamburger menu container */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;              /* menu width */
+    height: 100vh;             /* full screen height */
+    background: #fff;
+    padding: 20px;
+    overflow-y: auto;          /* ✅ ENABLE SCROLL */
+    transition: left 0.3s ease;
+    z-index: 2000;
+}
+
+/* When menu is open */
+#nav-menu.active {
+    left: 0;
+}
+.ue-top {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    padding: 15px 20px;
+    color: white;
+}
+
+.login-btn {
+    background: white;
+    color: black;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+	margin-left:950px;
+}
+
+/* SOCIAL */
+
+.social-section {
+    padding: 20px;
+    text-align: center;
+    background: white;
+    color: black;
+}
+
+.social-icons img {
+    width: 35px;
+    margin: 10px;;
+	
+	
+	/* ===== CART ITEM STYLE (SMALL) ===== */
+.cart-item {
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.cart-item img {
+    height: 3px;
+    object-fit: cover;
+}
+
+.cart-item h3 {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.cart-item p {
+    font-size: 13px;
+}
+
+.cart-item .remove-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+}
+
+/* smaller grid only for cart */
+#cartGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+/* ===== ORDERS PAGE ===== */
+.orders-section {
+    padding: 120px 20px;
+    background: #111;
+    color: white;
+    min-height: 100vh;
+}
+
+.order-card {
+    background: #1c1c1c;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-items {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.order-total {
+    font-weight: bold;
+}
+
+.status {
+    background: #2ecc71;
+    color: black;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+/* ===== BANK PAYMENT ===== */
+.bank-section {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.bank-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.bank-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.bank-option input {
+    transform: scale(1.2);
+}
+
+/* Dark mode */
+body.dark .bank-option {
+    background: #2a2a2a;
+    color: white;
+}
+
+
